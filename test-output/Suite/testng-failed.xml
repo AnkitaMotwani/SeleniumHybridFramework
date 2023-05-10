@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="LoginTest(failed)">
+    <classes>
+      <class name="com.automation.testcases.LoginTestStockMarket">
+        <methods>
+          <include name="loginApp"/>
+          <include name="tearDown"/>
+          <include name="setUpSuite"/>
+          <include name="screenShot"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.automation.testcases.LoginTestStockMarket -->
+    </classes>
+  </test> <!-- LoginTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
