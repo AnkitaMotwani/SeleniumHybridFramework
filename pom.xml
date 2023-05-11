@@ -3,7 +3,42 @@
 	<groupId>SeleniumHybridFramework</groupId>
 	<artifactId>HybridFramework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<properties>
+		<jre.level>17</jre.level>
+		<jdk.level>17</jdk.level>
+	</properties>
+	
+	<build>
+		<plugins>
+			<!-- Compiler plug-in -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>${jre.level}</source>
+					<target>${jdk.level}</target>
+				</configuration>
+			</plugin>
+			<!-- Added Surefire Plugin configuration to execute tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M3</version>
+				<configuration>
+					<suiteXmlFiles>
+						<!-- <suiteXmlFile>XMLFiles/${testngXmlFile}</suiteXmlFile> -->
+						<suiteXmlFile>XMLFiles/testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<systemPropertyVariables>
+					
+						<browserName>${browser}</browserName>
+						<appUrl>${stockUrlProduction}</appUrl>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -36,6 +71,12 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.2</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.24</version>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
+
 </project>

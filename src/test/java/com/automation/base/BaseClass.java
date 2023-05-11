@@ -32,11 +32,12 @@ public class BaseClass {
 	 report.attachReporter(extent);
 	
 	}
-	
+	@Parameters({"browser","stockUrlProduction"})
 	@BeforeClass
-	public void setUp() {
+	public void setUp(String browserRunTime, String appUrlRunTime) {
 		
-		driver = BrowserFactory.startWebApplication(driver, config.getBrowser(),config.getStagingURL());
+		driver = BrowserFactory.startWebApplication(driver,browserRunTime,appUrlRunTime);
+//		driver = BrowserFactory.startWebApplication(driver, config.getBrowser(),config.getStagingURL());
 	}
 	
 	@AfterClass
